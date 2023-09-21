@@ -63,7 +63,7 @@ async function healthcheck() {
 
 function handleError(e) {
   console.error(e);
-  telegram.sendError(e.replaceAll(process.env.TELEGRAM_NOTIFIER_BOT_TOKEN, "[REDACTED]")).catch(console.error);
+  telegram.sendError(e.toString().replaceAll(process.env.TELEGRAM_NOTIFIER_BOT_TOKEN, "[REDACTED]")).catch(console.error);
 }
 
 if (process.argv.includes("healthcheck")) {
